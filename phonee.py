@@ -12,3 +12,6 @@
 
 # Manage Tasks and Subtasks
 
+
+
+# Manage Photos
