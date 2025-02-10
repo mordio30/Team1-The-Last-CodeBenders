@@ -1,4 +1,4 @@
-#show all contacts when contatcs are opened
+#show all contacts when contacts are opened
 contacts = []
 
 
@@ -49,4 +49,26 @@ def contactSearch():
 
 
 contactSearch()        
+
+
+def contactDelete():
+    print(f"{contacts}")
+    search = input("enter the contacts name: ").lower()
+    toDelete = None
+
+    for contact in contacts: 
+        if search in contact['name'].lower():
+            toDelete = contact
+            break
+    if toDelete:
+        contacts.remove(toDelete)
+        print(f"Contact deleted:")
+        print(f"Name: {toDelete['name']}, Number: {toDelete['number']}, Email: {toDelete['email']}")
+                
+
+    else:
+        print(f"No contact was found with that information")
+
+
+contactDelete()        
 
