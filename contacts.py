@@ -10,7 +10,7 @@ def showContacts():
     else:
         print("No contacts available.")
 
-print(f" {showContacts()}")
+#print(f" {showContacts()}")
 #add contacts
 def addContact():
     firstName =(input("contacts first name: "))
@@ -32,9 +32,21 @@ print(f" {showContacts()}")
 
 def contactSearch():
     print(f"{contacts}")
-    search = input("enter the contacts name: ")
-    if search in contacts:
-        print(f"{search}")
+    search = input("enter the contacts name: ").lower()
+    found_contact = None
+
+    for contact in contacts: 
+        if search in contact['name'].lower():
+            found_contact = contact
+            break
+    if found_contact:
+        print(f"Contact found :")
+        print(f"Name: {found_contact['name']}, Number: {found_contact['number']}, Email: {found_contact['email']}")
+                
+
     else:
         print(f"No contact was found with that information")
+
+
+contactSearch()        
 
