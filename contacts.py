@@ -25,30 +25,16 @@ def addContact():
 
     return newContact
 
-
+print(f" {addContact()}")
+print(f" {showContacts()}")
 
 #contact search
 
 def contactSearch():
     print(f"{contacts}")
-    foundContact = []
     search = input("enter the contacts name: ")
-    for contact in contacts:
-        if search in contact['name'].lower():
-            foundContact.append(contact)
-        
-    if foundContact:
-        print(f"Search result: ")
-        for contact in foundContact:
-            print(f"name: {contact['name']}, Number: {contact['number']}")
+    if search in contacts:
+        print(f"{search}")
     else:
-            print(f"This name : {search} is not in your contacts.")
+        print(f"No contact was found with that information")
 
-#print("\n--- Adding a Contact ---")
-#print(addContact())
-
-#print("\n--- Showing Contacts ---")
-#print(showContacts())
-
-print("\n--- Searching for a Contact ---")
-print(contactSearch())
