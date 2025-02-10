@@ -10,7 +10,7 @@ def showContacts():
     else:
         print("No contacts available.")
 
-#print(f" {showContacts()}")
+print(f" {showContacts()}")
 #add contacts
 def addContact():
     firstName =(input("contacts first name: "))
