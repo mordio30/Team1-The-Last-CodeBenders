@@ -2,7 +2,7 @@
 tasks = [
 
 ]
-priority_level =['high', 'medium', 'low']
+priority_level = ['high', 'medium', 'low']
 days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
 
 def view_tasks():
@@ -14,8 +14,8 @@ def view_tasks():
 
 def add_task():
     task = {
-        'taskname': input("Enter the task name: ").lower(), # Must be a string
-        'taskuser': input("Who is responsible for this task: "), # Must be a string
+        'taskname': input("Enter the task name: ").lower(), # 
+        'taskuser': input("Who is responsible for this task: ").lower(), # Must be a string
         'taskdeadline': "", # Must be a day & converted to all lowercase
         'prioritylevel': "", # Must be a defined priority & converted to all lowercase
     }
