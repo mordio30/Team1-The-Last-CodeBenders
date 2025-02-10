@@ -70,5 +70,6 @@ def contactDelete():
         print(f"No contact was found with that information")
 
 
-contactDelete()        
+contactDelete() 
+contactSearch()        
 
