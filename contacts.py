@@ -38,19 +38,19 @@ def contactSearch():
 
     for contact in contacts: 
         if search in contact['name'].lower():
-            found_contact.appened(contact)
+            found_contact.append(contact)
     if found_contact:
-            print(f"Contact found from search:")
-            print(f"Name: {found_contact['name']}, Number: {found_contact['number']}, Email: {found_contact['email']}")
-           for i, contact in enumerate(found_contact):
-                print(f"{i}: Name: {contact['name']}, Email: {contact['email']}, Number: {contact['number']}")     
+        print(f"Contact(s) found from search:")
+        #print(f"Name: {found_contact['name']}, Number: {found_contact['number']}, Email: {found_contact['email']}")
+        for i, contact in enumerate(found_contact):
+            print(f"{i+1}: Name: {contact['name']}, Email: {contact['email']}, Number: {contact['number']}")     
 
     else:
         print(f"No contact was found with that search information")
 
 
 #contactSearch()        
-
+showContacts()
 
 def contactDelete():
     global contacts
@@ -69,7 +69,7 @@ def contactDelete():
     if len(duplicate_contacts) > 1:
         print(f"Multiple contacts found:")
         for i, contact in enumerate(duplicate_contacts):
-            print(f"{i}: Name: {contact['name']}, Email: {contact['email']}, Number: {contact['number']}")
+            print(f"{i+1}: Name: {contact['name']}, Email: {contact['email']}, Number: {contact['number']}")
         try: 
             choice= int(input("Enter the number of the contact you want to delete: "))
             if choice < 0 or choice >= len(duplicate_contacts):
