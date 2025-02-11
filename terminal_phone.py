@@ -1,5 +1,44 @@
 import manage_tasks
 
+
+
+
+# ADD = "add"
+# DELETE = "delete"
+# UPDATE = "update"
+
+# valid_commands = [
+#     ADD, 
+#     DELETE,
+#     UPDATE,
+# ]
+
+# class Command:
+#     def __init__(self, key, action):
+#         if key not in valid_commands:
+#             print("ERROR INVALID COMMAND KEY")
+#             return False
+        
+#         self.key = key
+#         self.action = action
+
+
+# commands = {
+#     [ADD]: Command(ADD, manage_tasks.add_task),
+#     [DELETE]: Command(DELETE, manage_tasks.delete_task),
+#     [UPDATE]: Command(UPDATE, manage_tasks.update_task)
+# }
+
+# my_command = commands.get("add")
+# print(my_command.key)
+# # do the thing
+# my_command.action()
+
+
+
+
+
+
 def screenTasks_Main():
     print()
     print()
@@ -21,8 +60,8 @@ def screenTasks_Main():
     print("*              *")
     print("****************")
     print()
-    print("add: Add tasks")
-    print("'back' or 'quit' to Leave")
+    print("'add' to ADD tasks")
+    print("'back' or 'quit' to LEAVE")
     print()
 
 
@@ -35,22 +74,23 @@ def screenTasks_Mod(index):
     print(f"*      {index+1}/{len(manage_tasks.tasks)}     *")
     print(f"*              *")
     print(f"*  Task Name:  *")
-    print(f"*      {manage_tasks.tasks[index]['taskname']}      *")
+    print(f"     {manage_tasks.tasks[index]['taskname']}      ")
     print(f"*              *") 
     print(f"*    User:     *")
-    print(f"*    {manage_tasks.tasks[index]['taskuser']}      *")
+    print(f"      {manage_tasks.tasks[index]['taskuser']}      ")
     print(f"*              *") 
     print(f"*   Deadline:  *")
-    print(f"*    {manage_tasks.tasks[index]['taskdeadline']}    *") 
+    print(f"     {manage_tasks.tasks[index]['taskdeadline']}    ") 
     print(f"*              *")
     print(f"*   Priority:  *")
-    print(f"*      {manage_tasks.tasks[index]['prioritylevel']}    *")
+    print(f"     {manage_tasks.tasks[index]['prioritylevel']}    ")
     print(f"****************")
     print()
     print("'add' to ADD tasks")
     print("'delete' to DELETE tasks")
     print("'update' to UPDATE tasks")
-    print("'back' or 'quit' to Leave")
+    print("'#' of task you want VIEW")
+    print("'back' or 'quit' to LEAVE")
     print()
 
 # screenTasks_views ={
@@ -68,6 +108,19 @@ def screenTasks(command = "none"):
     elif command == "update":
         manage_tasks.update_task()
     
+
+    try:
+        if int(command) > 0:
+            if int(command) <= len(manage_tasks.tasks):
+                index = int(command) - 1
+    except:
+        pass
+    # elif command == ">":
+    #     if (index+1) > (len(manage_tasks.tasks)-1):
+
+    #     pass
+    # elif command == "<":
+    #     pass
 
     #index = 0
     if len(manage_tasks.tasks) == 0:
@@ -103,7 +156,7 @@ def screenMain():
     print("****************")
     print()
     print("Choose a Distination")
-    print("'back' or 'quit' to Leave")
+    print("'back' or 'quit' to LEAVE")
     print()
 
 
@@ -128,7 +181,7 @@ def screenContacts():
     print("*              *")
     print("****************")
     print()
-    print("'back' or 'quit' to Leave")
+    print("'back' or 'quit' to LEAVE")
     print()
 
 
@@ -153,7 +206,7 @@ def screenBrowser():
     print("*              *")
     print("****************")
     print()
-    print("'back' or 'quit' to Leave")
+    print("'back' or 'quit' to LEAVE")
     print()
 
 
@@ -178,7 +231,7 @@ def screenPhoto():
     print("*              *")
     print("****************")
     print()
-    print("'back' or 'quit' to Leave")
+    print("'back' or 'quit' to LEAVE")
     print()
 
 
@@ -204,8 +257,16 @@ def quit(input):
 screenTasks_commands = {
     "add" : "add",
     "delete" : "delete",
-    "update" : "update"
-
+    "update" : "update",
+    '1':'1',
+    '2':'2',
+    '3':'3',
+    '4':'4',
+    '5':'5',
+    '6':'6',
+    '7':'7',
+    '8':'8',
+    '9':'9'
 }
 
 
