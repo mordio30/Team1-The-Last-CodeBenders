@@ -1,5 +1,5 @@
 import manage_tasks
-
+import contacts
 
 
 
@@ -45,6 +45,8 @@ def screenTasks_Main():
     print()
     print()
     print()
+    print()
+    print()
     print("****************")
     print("*     Tasks    *")
     print("*      0/0     *")
@@ -63,8 +65,6 @@ def screenTasks_Main():
     print("'add' to ADD tasks")
     print("'back' or 'quit' to LEAVE")
     print()
-
-
 
 def screenTasks_Mod(index):
     print()
@@ -92,11 +92,6 @@ def screenTasks_Mod(index):
     print("'#' of task you want VIEW")
     print("'back' or 'quit' to LEAVE")
     print()
-
-# screenTasks_views ={
-#     "main" : screenTasks_Main,
-#     "mod" : screenTasks_Mod
-# }
 
 def screenTasks(command = "none"):
     index = 0
@@ -132,8 +127,142 @@ def screenTasks(command = "none"):
 
 
 
+def screenContacts_Main():
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print("****************")
+    print("*    Contacts  *")
+    print("*      0/0     *")
+    print("*              *")  
+    print("*              *")
+    print("*              *") 
+    print("*              *")
+    print("*              *")  
+    print("*              *")
+    print("*              *")
+    print("*              *") 
+    print("*              *") 
+    print("*              *")
+    print("*              *")
+    print("****************")
+    print()
+    print("'add' to ADD Contacts")
+    print("'back' or 'quit' to LEAVE")
+    print()
+
+def screenContacts_Mod(index):
+    print()
+    print()
+    print("****************")
+    print("*    Contacts  *")
+    print(f"*    {index+1}/{len(contacts.contacts)}     *")
+    print(f"*              *")
+    print(f"*    Name:     *")
+    print(f"   {contacts.contacts[index]['name']}      ")
+    print(f"*              *") 
+    print(f"*   Number #:  *")
+    print(f"    {contacts.contacts[index]['number']}      ")
+    print(f"*              *") 
+    print(f"*   Email @:   *")
+    print(f"  {contacts.contacts[index]['email']}    ") 
+    print(f"*              *")
+    print(f"*              *")
+    print(f"*              *")
+    #print(f"*   Priority:  *")
+    #print(f"     {contacts.contacts[index]['prioritylevel']}    ")
+    print(f"****************")
+    print()
+    print("'add' to ADD contacts")
+    print("'delete' to DELETE contacts")
+    #print("'search' to SEARCH contacts")
+    print("'#' of task you want VIEW")
+    print("'back' or 'quit' to LEAVE")
+    print()
+
+def screenContacts(command = "none"):
+    index = 0
+    
+    if command == "add":
+        contacts.addContact()
+    elif command == "delete":
+        contacts.contactDelete()
+    elif command == "search":
+        contacts.contactSearch()
+
+    try:
+        if int(command) > 0:
+            if int(command) <= len(contacts.contacts):
+                index = int(command) - 1
+    except:
+        pass
+
+    if len(contacts.contacts) == 0:
+        screenContacts_Main()
+    elif len(contacts.contacts) > 0:
+        screenContacts_Mod(index)
+
+
+
+
+def screenBrowser():
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print("****************")
+    print("*    Browser   *")
+    print("*              *")
+    print("*              *")  
+    print("*              *")
+    print("*              *") 
+    print("*              *")
+    print("*              *") 
+    print("*              *")
+    print("*              *") 
+    print("*              *")
+    print("*              *")
+    print("*              *")
+    print("*              *")
+    print("****************")
+    print()
+    print("'back' or 'quit' to LEAVE")
+    print()
+
+def screenPhoto():
+    print()
+    print()
+    print()
+    print()
+    print()
+    print()
+    print("****************")
+    print("*     Photo    *")
+    print("*              *")
+    print("*              *")  
+    print("*              *")
+    print("*              *") 
+    print("*              *")
+    print("*              *")
+    print("*              *") 
+    print("*              *")
+    print("*              *")
+    print("*              *") 
+    print("*              *")
+    print("*              *")
+    print("****************")
+    print()
+    print("'back' or 'quit' to LEAVE")
+    print()
 
 def screenMain():
+    print()
+    print()
     print()
     print()
     print()
@@ -160,86 +289,6 @@ def screenMain():
     print()
 
 
-def screenContacts():
-    print()
-    print()
-    print()
-    print()
-    print("****************")
-    print("*    Contacts  *")
-    print("*              *")
-    print("*              *")  
-    print("*              *")
-    print("*              *") 
-    print("*              *")
-    print("*              *")  
-    print("*              *")
-    print("*              *")
-    print("*              *") 
-    print("*              *") 
-    print("*              *")
-    print("*              *")
-    print("****************")
-    print()
-    print("'back' or 'quit' to LEAVE")
-    print()
-
-
-def screenBrowser():
-    print()
-    print()
-    print()
-    print()
-    print("****************")
-    print("*    Browser   *")
-    print("*              *")
-    print("*              *")  
-    print("*              *")
-    print("*              *") 
-    print("*              *")
-    print("*              *") 
-    print("*              *")
-    print("*              *") 
-    print("*              *")
-    print("*              *")
-    print("*              *")
-    print("*              *")
-    print("****************")
-    print()
-    print("'back' or 'quit' to LEAVE")
-    print()
-
-
-def screenPhoto():
-    print()
-    print()
-    print()
-    print()
-    print("****************")
-    print("*     Photo    *")
-    print("*              *")
-    print("*              *")  
-    print("*              *")
-    print("*              *") 
-    print("*              *")
-    print("*              *")
-    print("*              *") 
-    print("*              *")
-    print("*              *")
-    print("*              *") 
-    print("*              *")
-    print("*              *")
-    print("****************")
-    print()
-    print("'back' or 'quit' to LEAVE")
-    print()
-
-
-
-
-
-
-
 all_my_screen = {
     "main" : screenMain,
     "contacts" : screenContacts,
@@ -249,11 +298,6 @@ all_my_screen = {
     
 }
 
-
-def quit(input):
-    if (input == "quit")  or (input == "back"):   #  if input == "quit"  or "back":
-        return False
-    
 screenTasks_commands = {
     "add" : "add",
     "delete" : "delete",
@@ -268,21 +312,35 @@ screenTasks_commands = {
     '8':'8',
     '9':'9'
 }
-
-
-# def change_Screen(input):
-#     if input == "quit":
-#         return False
-
+screenContacts_commands = {
+    "add" : "add",
+    "delete" : "delete",
+    "search" : "search",
+    '1':'1',
+    '2':'2',
+    '3':'3',
+    '4':'4',
+    '5':'5',
+    '6':'6',
+    '7':'7',
+    '8':'8',
+    '9':'9'
+}
 
 
 def listen_for_commands(screen,user):
     if (screen == "tasks") and (user in screenTasks_commands):
         return screenTasks_commands[user]
+    elif (screen == "contacts") and (user in screenContacts_commands):
+        return screenContacts_commands[user]
+    
     else:
         return "none"
         
 
+def quit(input):
+    if (input == "quit")  or (input == "back"):   #  if input == "quit"  or "back":
+        return False
 
 def phone(call = "main"):
     key = True              # defualt on inifinite loop
